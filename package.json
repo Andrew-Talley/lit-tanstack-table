@@ -1,0 +1,53 @@
+{
+  "name": "tanstack-lit-table",
+  "version": "0.0.1",
+  "description": "Lit adapter for the tanstack table library",
+  "scripts": {
+    "build:rollup": "rollup --config rollup.config.js",
+    "build:tsc": "tsc",
+    "build": "npm run build:tsc && npm run build:rollup"
+  },
+  "files": [
+    "dist/*",
+    "package.json"
+  ],
+  "keywords": [
+    "lit",
+    "table"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Andrew-Talley/lit-tanstack-table.git"
+  },
+  "author": "Andrew Talley",
+  "license": "MIT",
+  "type": "module",
+  "module": "build/lib/index.esm.js",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/lib/index.d.ts",
+      "import": "./build/lib/index.mjs",
+      "default": "./build/lib/index.js",
+      "solid": "./src/index.tsx"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffect": false,
+  "dependencies": {
+    "@tanstack/table-core": "^8.11.2"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.9.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
